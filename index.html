@@ -1,0 +1,99 @@
+<!-- <!DOCTYPE html> -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <title>SetUp Wizard</title>
+</head>
+<body>
+  <form action="#" class="form">
+    <h3 class="text-center">Registration Form</h3>
+<!--     PROGRESS BAR -->
+    <div class="progressbar">
+      <div class="progress" id="progress" style=""></div>
+        <div class="progress-step progress-step-active" data-title="Intro"></div>
+        <div class="progress-step" data-title="Contact"></div>
+        <div class="progress-step" data-title="ID"></div>
+        <div class="progress-step" data-title="Password"></div>
+        
+      </div>
+    
+    
+<!--     STEPS -->
+    <div class="form-step form-step-active">
+      <div class="input-group">
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" />
+        <small>Error Message</small>
+      </div>
+      <div class="input-group">
+        <label for="position">Position</label>
+        <input type="text" name="position" id="position" />
+        <small>Error Message</small>
+      </div>
+      <div class="">
+         <a href="#" class="btn btn-next width-50 ml-auto">Next</a>
+      </div>
+    </div>
+    
+    <div class="form-step">
+      <div class="input-group">
+        <label for="phone">Phone</label>
+        <input type="phone" name="phone" id="phone" />
+        <small>Error Message</small>
+      </div>
+      <div class="input-group">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" />
+        <small>Error Message</small>
+      </div>
+      <div class="btns-group">
+        <a href="#" class="btn2 btn-prev">Previous</a>
+        <a href="#" class="btn btn-next">Next</a>
+      </div>
+    </div>
+    
+    
+    <div class="form-step">
+      <div class="input-group">
+        <label for="dob">Date of Birth</label>
+        <input type="date" name="dob" id="dob" />
+        <small>Error Message</small>
+      </div>
+      <div class="input-group">
+        <label for="ID">National ID</label>
+        <input type="number" name="ID" id="ID" />
+        <small>Error Message</small>
+      </div>
+      <div class="btns-group">
+        <a href="#" class="btn2 btn-prev">Previous</a>
+        <a href="#" class="btn btn-next">Next</a>
+      </div>
+    </div>
+    
+    
+    <div class="form-step">
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" />
+        <small>Error Message</small>
+      </div>
+      <div class="input-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" name="confirmPassword" id="confirmPassword" />
+        <small>Error Message</small>
+      </div>
+      <div class="btns-group">
+        <a href="#" class="btn2 btn-prev">Previous</a>
+        <input type="submit" value="Submit" class="btn btn-submit">
+      </div>
+    </div>
+    
+    
+    
+  </form>
+</body>
+</html>
