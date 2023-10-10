@@ -1,0 +1,246 @@
+:root{
+  --primary-color: rgb(11, 78, 179);
+}
+
+
+
+*,
+*::before,
+*::after {
+box-sizing: border-box;
+  
+}
+
+body{
+  
+  font-family: Montserrat, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  background-color: #FAEEE7
+  
+}
+/* Global Styling */
+input{
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+}
+
+label{
+  display: block;
+  margin-bottom: 0.5rem
+}
+
+.width-50{
+  width: 50%;
+}
+
+.ml-auto{
+  margin-left: auto;
+}
+
+.text-center{
+  text-align: center
+}
+
+
+/* form */
+
+
+.form{
+  width: clamp(320px, 30%, 430px);
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  border-radius: 0.35rem;
+  padding: 1.5rem;
+  
+}
+
+.form-step{
+  display: none;
+  transform-origin: top;
+  animation: animate 0.5s;
+}
+
+.form-step-active{
+  display: block
+}
+
+.form-step small{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  visibility: hidden;
+}
+
+.form-step .error{
+  position: relative;
+   left: 0;
+  bottom: 0;
+  visibility: hidden;
+}
+
+.form-step.error small{
+  visibility: visible;
+  color: #e74e3c
+}
+
+.input-group{
+  margin: 2rem 0;
+}
+
+@keyframes animate{
+  from {
+ transform: scale(1, 0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+  
+}
+
+/* Buttons */
+.btns-group{
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 1.5rem;
+}
+
+
+.btn,
+.btn2 {
+  min-width: 130px;
+  color: #fff;
+  text-align: center;
+  padding: 0.75rem;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: block;
+  outline: none;
+  overflow: hidden;
+  border-radius: 5px;
+  border: none;
+  background-color: #3a86ff
+}
+.btn:hover {
+  box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--primary-color);
+  border-radius: 5px;
+  padding-right: 24px;
+  padding-left:8px;
+}
+.btn:hover::after {
+  opacity: 1;
+  right: 10px;
+}
+
+.btn::after {
+  content: "\00BB";
+  position: absolute;
+  opacity: 0;
+  font-size: 20px;
+  line-height: 40px;
+  top: 0;
+  right: -20px;
+  transition: 0.4s;
+}
+/* BUTTON PREV */
+.btn2:hover {
+  box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--primary-color);
+  border-radius: 5px;
+  padding-right: 8px;
+  padding-left:24px;
+}
+.btn2:hover::after {
+  opacity: 1;
+  left: -100px;
+}
+
+.btn2::after {
+  content: "\00AB";
+  position: absolute;
+  opacity: 0;
+  font-size: 20px;
+  line-height: 40px;
+  top: 0;
+  right: -20px;
+  transition: 0.4s;
+}
+
+
+/* progress bar */
+
+/* .progress{
+  
+} */
+.progress{
+     background-color: var(--primary-color);
+  width: 0%;
+  transition: 0.3s;
+/*     background-color: #dcdcdc; */
+
+}
+
+.progressbar{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  counter-reset: step;
+  align-items: center;
+  text-align: center;
+  margin: 2rem 0 4rem;
+  
+
+}
+
+.progressbar::before, .progress{
+  content: "";
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: -1;
+  background-color: #dcdcdc;
+}
+
+.progress-step{
+  width: 2.1875rem;
+  height: 2.1875rem;
+  background-color: #dcdcdc;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  
+}
+
+.progress-step::before{
+  counter-increment: step;
+  content: counter(step);
+  
+}
+
+.progress-step::after{
+  content: attr(data-title);
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  font-size: 0.85rem;
+  color: #666;
+  }
+
+.progress-step-active{
+ background-color: var(--primary-color);
+ color: #f3f3f3;
+  
+}
+
